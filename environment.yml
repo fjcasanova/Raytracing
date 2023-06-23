@@ -5,6 +5,4 @@ dependencies:
   - numpy
   - matplotlib
   - sympy
-  - ipywidgets
-  - bqplot
   - notebook
