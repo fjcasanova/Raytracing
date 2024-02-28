@@ -16,7 +16,7 @@ class vecteur() :
         return vecteur(self.x * other , self.y * other , self.z * other)
 
     def __rmul__(self, other) :
-        return vecteur(self.x * other , self.y * other , self.z * other)
+        return other*self
 
     def scalaire(self, other) :
         return self.x * other.x + self.y * other.y + self.z * other.z
@@ -37,4 +37,4 @@ class vecteur() :
         self.y = max(self.y, 0)
         self.z = min(self.z, 255)
         self.z = max(self.z, 0)
-        return(self.x, self.y, self.z)
+        return(int(self.x), int(self.y), int(self.z))
