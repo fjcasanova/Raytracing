@@ -1,12 +1,11 @@
 from math import sqrt as racine
-
+import numpy as np
 class sphere():
-    def __init__(self, centre, rayon, couleur, alpha, reflexion = 0, diffusion = 1):
+    def __init__(self, centre, rayon, couleur, alpha, reflexion = 0):
         self.centre = centre
         self.rayon = rayon
         self.couleur = couleur
         self.alpha = alpha
-        self.diffusion = diffusion
         self.reflexion = reflexion
     def normal(self, M):
         radial =  M - self.centre
@@ -26,12 +25,11 @@ class sphere():
         elif delta > 0 :
             x1 = (- b - racine(delta)) / (2 * a)
             x2 = (- b + racine(delta)) / (2 * a)
-
-            if min(x1, x2) < 0 and max(x1, x2) >= 0 :
+            if min(x1, x2) <= 0 and max(x1, x2) > 0 :
                 return max(x1, x2)
-            elif min(x1, x2) >= 0 :
+            elif min(x1, x2) > 0 :
                 return min(x1, x2)
             else:
-                return 0
+                return np.inf
         else:
-            return 0
+            return np.inf
