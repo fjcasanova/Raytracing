@@ -30,6 +30,15 @@ class vecteur() :
     def vecteur2coord(self) :
         return (self.x, self.y, self.z)
 
+    def rotx(self, t):
+        return vecteur(self.x, self.y*math.cos(t) - self.z*math.sin(t), self.y*math.sin(t) + self.z*math.cos(t))
+
+    def roty(self, t):
+        return vecteur(self.x*math.cos(t) + self.z*math.sin(t), self.y, -self.x*math.sin(t) + self.z*math.cos(t))
+
+    def rotz(self, t):
+        return vecteur(self.x*math.cos(t) - self.y*math.sin(t), self.x*math.sin(t) + self.y*math.cos(t), self.z)
+
     def rgb(self) :
         self.x = min(self.x, 255)
         self.x = max(self.x, 0)

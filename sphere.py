@@ -1,12 +1,13 @@
 from math import sqrt as racine
 import numpy as np
 class sphere():
-    def __init__(self, centre, rayon, couleur, alpha, reflexion = 0):
+    def __init__(self, centre, rayon, couleur, alpha, reflexion = 0, diffusion = 1):
         self.centre = centre
         self.rayon = rayon
         self.couleur = couleur
         self.alpha = alpha
         self.reflexion = reflexion
+        self.diffusion = diffusion
     def normal(self, M):
         radial =  M - self.centre
         n = radial.unitaire()
